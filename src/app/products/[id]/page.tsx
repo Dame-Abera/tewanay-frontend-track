@@ -28,45 +28,51 @@ export default function ProductDetailPage({
 
   if (!product) {
     return (
-      <div className="text-center text-red-500">
+      <div className="text-center text-red-600">
         Product not found. Please try again later.
       </div>
     );
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div className="relative h-[400px] w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-lg shadow-sm">
+      <div className="relative h-[400px] w-full bg-gray-50 rounded-lg">
         <Image
           src={product.image}
           alt={product.title}
           fill
-          className="object-contain"
+          className="object-contain p-4"
         />
       </div>
-      <div className="space-y-4">
-        <h1 className="text-3xl font-bold text-gray-900">{product.title}</h1>
-        <p className="text-2xl font-semibold text-blue-600">
-          ${product.price.toFixed(2)}
-        </p>
-        <p className="text-gray-600">{product.description}</p>
-        <div className="pt-4">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.title}</h1>
+          <p className="text-2xl font-semibold text-blue-700">
+            ${product.price.toFixed(2)}
+          </p>
+        </div>
+        <div className="border-t border-b border-gray-200 py-4">
+          <p className="text-gray-800 leading-relaxed">{product.description}</p>
+        </div>
+        <div className="flex flex-col gap-4">
           <button
             onClick={() => addItem(product)}
-            className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center justify-center gap-2 bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors"
           >
             <FaShoppingCart className="h-5 w-5" />
             Add to Cart
           </button>
         </div>
-        <div className="pt-4">
-          <h2 className="text-lg font-semibold text-gray-900 mb-2">
+        <div className="bg-gray-50 p-4 rounded-lg">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">
             Product Details
           </h2>
           <ul className="space-y-2">
-            <li>
-              <span className="font-medium">Category:</span>{' '}
-              {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
+            <li className="flex items-center gap-2">
+              <span className="font-medium text-gray-900">Category:</span>
+              <span className="text-gray-800">
+                {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
+              </span>
             </li>
           </ul>
         </div>
