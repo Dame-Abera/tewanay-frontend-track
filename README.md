@@ -72,7 +72,7 @@ src/
 ## Key Features Implementation
 
 ### Authentication
-- Secure user authentication using NextAuth.js
+- Secured user authentication using NextAuth.js
 - Protected routes
 - User session management
 
@@ -100,7 +100,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Authors
 
-- Your Name - Initial work
+- DameAbera - Initial work
 
 ## Acknowledgments
 
